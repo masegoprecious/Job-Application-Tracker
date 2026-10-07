@@ -1,1 +1,129 @@
+# Job Application Tracker
+## 1. Project Objective
+
+The purpose of this project is to create a simple job application tracking system using Microsoft Excel and Microsoft Power Automate.
+
+The system helps keep track of job applications and automate follow-up reminders based on the current application status.
+
+## 2. Tools Used
+
+* Microsoft Excel Online
+* Microsoft Power Automate
+* Microsoft Outlook/Gmail email connector
+* GitHub
+
+## 3. Excel Table Structure
+
+The job application information is stored in an Excel table called `JobApplications`.
+
+The table contains information such as:
+
+| Column         | Purpose                               |
+| -------------- | ------------------------------------- |
+| Company        | Name of the company                   |
+| Job Title      | Position applied for                  |
+| Job Type       | Type of employment/programme          |
+| Location       | Job location                          |
+| Date Applied   | Date the application was submitted    |
+| Status         | Current application status            |
+| Notes          | Additional information                |
+| Last Updated   | Date the application was last updated |
+| Follow-Up Date | Date to follow up                     |
+| Month          | Application month                     |
+
+## 4. Power Automate Flow
+
+The automation uses a scheduled Power Automate cloud flow.
+
+The main flow structure is:
+
+**Recurrence → List rows present in a table → Apply to each → Check application status → Send appropriate email**
+
+### Main steps
+
+1. **Recurrence**
+
+   The flow runs automatically according to a scheduled recurrence.
+
+2. **List rows present in a table**
+
+   Power Automate retrieves the job application records from the Excel `Job` table.
+
+3. **Apply to each**
+
+   The flow processes each job application returned from Excel.
+
+4. **Check Status**
+
+   The flow checks the current status of each application.
+
+5. **Interview**
+
+   If an application has an interview status, the flow can send an email notification.
+
+6. **Applied / Under Review**
+
+   Applications that are still active can be identified for follow-up reminders.
+
+7. **Rejected**
+
+   Rejected applications do not require a follow-up reminder.
+
+## 5. How the Automation Works
+
+The automation reduces the need to manually check every application.
+
+The scheduled flow retrieves the applications from Excel and processes them individually. Based on the status of each application, Power Automate determines whether an email notification or reminder is required.
+
+This demonstrates how Power Automate can be used to automate repetitive administrative tasks.
+
+## 6. Problems Encountered
+
+During development, some challenges were encountered, including:
+
+* Configuring Excel as a data source for Power Automate.
+* Making sure the Excel data was stored inside a proper table.
+* Working with the `List rows present in a table` action.
+* Understanding the `Apply to each` action.
+* Configuring conditions based on application status.
+* Setting up automated email notifications.
+
+## 7. How the Problems Were Solved
+
+The problems were addressed by:
+
+* Creating a structured Excel table called `Job`.
+* Using Power Automate's Excel connector to retrieve the table records.
+* Using `Apply to each` to process individual applications.
+* Creating conditions to check application statuses.
+* Testing the flow and making adjustments when necessary.
+
+## 8. Future Improvements
+
+Future versions of the project could include:
+
+* A Power BI dashboard showing application statistics.
+* Automatic follow-up dates.
+* More advanced email notifications.
+* Automatic tracking of interview dates.
+* Microsoft Teams notifications.
+* Application success-rate calculations.
+* A dashboard showing applications by company, status and month.
+
+## 9. Skills Demonstrated
+
+This project demonstrates practical skills in:
+
+* Microsoft Excel
+* Microsoft Power Automate
+* Workflow automation
+* Data management
+* Conditional logic
+* Email automation
+* Problem solving
+* Process improvement
+
+## 10. Project Screenshots
+
+Screenshots of the Excel tracker and Power Automate workflow are available in the `screenshots` folder.
 
